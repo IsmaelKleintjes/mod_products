@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Products</name>
+    <author>Twins</author>
+    <version>1.0.0</version>
+    <description>Products module</description>
+    <files>
+        <filename>mod_products.xml</filename>
+        <filename module="mod_products">mod_products.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="listtype"
+                    type="list"
+                    label="Lijsttype"
+                    required="true"
+                    >
+                    <option>- Selecteer</option>
+                    <option value="FEATURED">Uitgelichte producten</option>
+                    <option value="LATEST">Nieuwste producten</option>
+                </field>
+                <field
+                    name="listlimit"
+                    type="number"
+                    label="Aantal producten"
+                    default="5"
+                    required="true"
+                    filter="integer"
+                     />
+            </fieldset>
+            <fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+					validate="moduleLayout"
+				/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
